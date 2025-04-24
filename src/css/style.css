@@ -1,0 +1,188 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  display: block;
+}
+
+#root {
+  overflow-y: auto;
+}
+
+html {
+  height: auto !important;
+}
+
+body {
+  margin: 0;
+  background-color: #fff;
+  color: #200f00;
+  font-family: Fantasy, -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 10px;
+}
+.recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  background-color: #200f00;
+  margin: 5px;
+  color: #fff;
+  border-radius: 5px;
+}
+.recipe img {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 5px 5px 0 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.recipe img:hover {
+  width: 100%;
+  transform: scale(1.2);
+  border-radius: 5px 5px 0 0;
+}
+.recipe p {
+  margin: 8px 0;
+  font-size: 20px;
+}
+.recipe_block.second {
+  padding: 20px;
+}
+.recipe_block {
+  overflow: hidden;
+}
+.recipe_block.first {
+  max-height: 200px;
+}
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  padding: 0 10%;
+}
+.search input {
+  border: 2px solid #200f00;
+  border-radius: 7px 0px 0px 7px;
+  padding: 10px 20px;
+  width: 100%;
+  transition: 0.3s;
+}
+.search input:focus {
+  outline: none; /* убирает стандартный outline (но лучше оставить для accessibility!) */
+  border: 2px solid #ff9901; /* красная рамка, например */
+  border-right: 2px solid #200f00;
+  box-shadow: 0 0 5px rgba(193, 90, 0, 0.5); /* легкая тень */
+  background-color: #fff8f8; /* чуть розоватый фон */
+}
+.btn {
+  border-radius: 0px 7px 7px 0px;
+  padding: 10px 20px;
+  transition: 0.3s;
+  border: 2px solid #200f00;
+  border-left: 0;
+  background: #e81224;
+  color: #fff;
+}
+.btn:hover {
+  background: #200f00;
+  color: #fff;
+}
+
+header {
+  background-color: #200f00;
+  color: #fff;
+  padding: 20px 20px;
+  font: 20px Fantasy;
+  margin-bottom: 20px;
+}
+
+.input_form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.recipe_btn {
+  border-radius: 7px;
+  padding: 10px 20px;
+  transition: 0.3s;
+  border: 2px solid #200f00;
+  width: 100%;
+}
+.recipe_btn:hover {
+  background: #e81224;
+  color: #fff;
+}
+
+.info_text {
+  margin-top: 10px;
+}
