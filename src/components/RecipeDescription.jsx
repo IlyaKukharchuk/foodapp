@@ -11,26 +11,28 @@ export default function RecipeDescription({ results }) {
       </div>
 
       <div className="diets">
-        {results.vegetarian && <span>Vegetarian</span>}
-        {results.vegan && <span>Vegan</span>}
-        {results.glutenFree && <span>Gluten Free</span>}
+        {results.vegetarian && <span>🥦 Vegetarian</span>}
+        {results.vegan && <span>🌱 Vegan</span>}
+        {results.glutenFree && <span>🌾 Gluten Free</span>}
       </div>
+      <br />
+      <div className="additional-info">
+        <h4>Ingredients:</h4>
+        <ul>
+          {results.extendedIngredients.map((ing) => (
+            <li key={ing.id}>
+              {ing.original} - {ing.amount} {ing.unit}
+            </li>
+          ))}
+        </ul>
+        <br />
+        <h4>Instructions:</h4>
+        <div dangerouslySetInnerHTML={{ __html: results.instructions }} />
 
-      <h4>Ingredients:</h4>
-      <ul>
-        {results.extendedIngredients.map((ing) => (
-          <li key={ing.id}>
-            {ing.original} - {ing.amount} {ing.unit}
-          </li>
-        ))}
-      </ul>
-
-      <h4>Instructions:</h4>
-      <div dangerouslySetInnerHTML={{ __html: results.instructions }} />
-
-      <a href={results.sourceUrl} target="_blank" rel="noreferrer">
-        Recipe Source
-      </a>
+        <a href={results.sourceUrl} target="_blank" rel="noreferrer">
+          <button className="recipe_btn">Recipe Source</button>
+        </a>
+      </div>
     </div>
   );
 }
