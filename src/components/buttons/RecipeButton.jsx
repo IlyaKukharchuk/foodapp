@@ -1,10 +1,18 @@
-export default function RecipeButton({ query }) {
-  function handleSearch() {
-    console.log("Searching for", query, "...");
-  }
+export default function RecipeButton({
+  showDescription,
+  setShowDescription,
+  setId,
+  recipeId,
+}) {
   return (
-    <button onClick={handleSearch} className="recipe_btn">
-      View recipe
+    <button
+      className="recipe_btn"
+      onClick={() => {
+        setShowDescription(!showDescription);
+        setId(recipeId);
+      }}
+    >
+      {showDescription ? " Hide recipe" : "View recipe"}
     </button>
   );
 }

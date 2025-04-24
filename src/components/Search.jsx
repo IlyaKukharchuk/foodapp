@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import SearchButton from "./buttons/SearchButton";
 import Recipes from "./Recipes";
 
-const API_KEY = "092dafb03ad94ee68604e62d88d54fe0";
-const URL = "https://api.spoonacular.com/recipes/complexSearch";
+const API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
+const URL = import.meta.env.VITE_API_URL;
 
 export default function Search() {
   const [query, setQuery] = useState("");
@@ -28,7 +28,9 @@ export default function Search() {
 
   async function fetchFood() {
     try {
-      const response = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`);
+      const response = await fetch(
+        `${URL}/complexSearch?query=${query}&apiKey=${API_KEY}`
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
