@@ -23,8 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-#privicy
-*.env
-*.env.local
-*.env.development
-*.env.production
+# Environment files
+*.env*
+!.env.development
