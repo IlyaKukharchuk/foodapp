@@ -21,7 +21,11 @@ export default function RecipeDescription({ results }) {
         <ul>
           {results.extendedIngredients.map((ing) => (
             <li key={ing.id}>
-              {ing.original} - {ing.amount} {ing.unit}
+              {ing.original}
+              <img
+                src={`https://img.spoonacular.com/ingredients_500x500/${ing.image}`}
+                alt={ing.image}
+              />
             </li>
           ))}
         </ul>
