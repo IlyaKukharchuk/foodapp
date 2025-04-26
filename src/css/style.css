@@ -90,7 +90,6 @@ ol {
 .recipe {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   justify-items: center;
   background-color: #200f00;
   margin: 5px;
